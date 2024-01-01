@@ -24,6 +24,9 @@ io.on("connection", (socket) => {
   socket.on("drawLine", (arg) => {
     socket.broadcast.emit("drawLine", arg);
   });
+  socket.on("changeConfig", (arg) => {
+    socket.broadcast.emit("changeConfig", arg);
+  });
 });
 
 httpServer.listen(5001);
